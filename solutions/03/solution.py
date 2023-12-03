@@ -56,13 +56,16 @@ def part_2(text_content:str) -> int:
     for value in gear_match_dict.values():
         if len(value) == 2:
             gear_ratio_sum += m.prod(value)
-    return
+    return gear_ratio_sum
 
 if __name__ == "__main__":
     filename ="real_input.txt"
     with open(filename, "r") as file:
         content = file.read()
-        sol = part_1(text_content=content)
+        games_sum = part_1(text_content=content)
+        print(f"The sum of all part numbers ::: {games_sum}")
+        total_sum = part_2(text_content=content,)
+        print(f"The sum of the gear ratios ::: {total_sum}")
         sol2 = part_2(text_content=content)
 
     
