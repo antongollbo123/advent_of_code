@@ -20,7 +20,7 @@ def part_1(text_content:str ) -> int:
 def part_2(text_content:str) -> int:
     separate_games = text_content.split("\n")
     num_games = len(separate_games)
-    card_count = [1] * num_games
+    card_count = [1] * num_games 
 
     for line_index, line in enumerate(separate_games):
         game_no, game_content = line.split(":")
@@ -30,9 +30,9 @@ def part_2(text_content:str) -> int:
         z = x.intersection(y)
 
         for match in range(len(z)):
-            num_sc = card_count[line_index]
-            card_count[line_index + match + 1] += num_sc
-    
+            num_sc = card_count[line_index] # num scratchcards for this card, 
+            match_length = line_index + match + 1 # How far we should check in the summing list
+            card_count[match_length] += num_sc # how many scratchcards should we append of this card, to other cards that match?
     return sum(card_count)
 
 
